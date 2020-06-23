@@ -1,5 +1,6 @@
 <h1>Ed's Portfolio</h1>
 
+
 {% for project in projects %}
 
 <h2>{{ project.title }}</h2>
@@ -7,7 +8,8 @@
 <img src="{{ project.image.url }}" height=320 width=320>
 {% if project.url %}
 <br>
-<a href="{{ project.url }}"> Link </a>
+<br>
+<a href="{{ project.url }}" style="text-decoration: none" target="_blank"> Visit Page </a>
 {% endif %}
 
 
