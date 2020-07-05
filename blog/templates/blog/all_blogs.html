@@ -8,7 +8,15 @@ Hello blog!
 
 {% for blog in blogs %}
 
+<img src="{{ blog.image.url }}" height=320 width=320>
 <a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
+
+{% if blog.url %}
+<br>
+<br>
+<a href="{{ blog.url }}" style="text-decoration: none" target="_blank"> Visit Page </a>
+{% endif %}
+
 <h4>{{ blog.date |date:'M d Y' |upper }}</h4>
 <p>{{ blog.description |striptags| truncatechars:120 }}</p>
 <br>

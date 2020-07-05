@@ -2,6 +2,14 @@
 
 {% block content %}
 
+<img src="{{ blog.image.url }}" height=320 width=320>
+
+{% if blog.url %}
+<br>
+<br>
+<a href="{{ blog.url }}" style="text-decoration: none" target="_blank"> Visit Page </a>
+{% endif %}
+
 <h1>{{ blog.title }}</h1>
 
 <h2>{{ blog.date|date:'F jS Y'}}</h2>
