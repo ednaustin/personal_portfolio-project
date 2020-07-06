@@ -2,24 +2,48 @@
 
 {% block content %}
 
-Hello blog!
-<br>
-<h2>There are currently {{ blogs.count }} blog post{{ blogs.count |pluralize}}</h2>
+<div class="container">
+  <br>
+  <h4>Hello! I'm Ed, thanks for visiting my blog!</h4>
+  <p>The COVID-19 pandemic has negatively impacted businesses and life.
+    In these times, I feel it's especially important to support Black and minority-owned businesses.
+    Some excellent resources are Do512's <a href="https://do512.com/p/black-owned-businesses-in-austin" target="_blank">Black-Owned Businesses</a>
+    and <a href="https://do512.com/p/resource-guide-to-creating-change-in-austin" target="_blank">Creating Change</a> in Austin.
+  </p>
+  <p>
+    In addition to random postings, I'll also be posting info about the locally-owned businesses
+    that I have visited and services that I have used. I, personally, started using the list of businesses (mentioned above) provided by Do512. Enjoy!
+  </p>
+  <br>
+  <h5>Ed has written {{ blogs.count }} blog post{{ blogs.count |pluralize}}</h5>
+  <br>
 
-{% for blog in blogs %}
+  {% for blog in blogs %}
 
-<img src="{{ blog.image.url }}" height=320 width=320>
-<a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
+  <div class="card" style="width: 18rem;">
+    <img src="{{ blog.image.url }}" class="card-img-top" alt="blog image">
+    <div class="card-body">
 
-{% if blog.url %}
-<br>
-<br>
-<a href="{{ blog.url }}" style="text-decoration: none" target="_blank"> Visit Page </a>
-{% endif %}
+  <h4 class="card-title">{{ blog.title }}</h4>
 
-<h4>{{ blog.date |date:'M d Y' |upper }}</h4>
-<p>{{ blog.description |striptags| truncatechars:120 }}</p>
-<br>
+  {% comment %}
+  <a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
+
+  {% if blog.url %}
+  <br>
+  <br>
+  <a href="{{ blog.url }}" style="text-decoration: none" target="_blank"> Visit Page </a>
+  {% endif %}
+  {% endcomment %}
+
+  {% comment %}<h4>{{ blog.date |date:'M d Y' |upper }}</h4>{% endcomment %}
+  {% comment %}<p>{{ blog.description |striptags| truncatechars:120 }}</p>{% endcomment %}
+
+  <p class="card-text">{{ blog.description |striptags| truncatechars:120 }}</p>
+  <a href="{% url 'blog:detail' blog.id %}" class="btn btn-primary">{{ blog.title }}</a>
+  </div>
+  </div>
+</div>
 
 {% endfor %}
 
