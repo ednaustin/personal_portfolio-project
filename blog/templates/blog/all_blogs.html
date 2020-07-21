@@ -1,53 +1,183 @@
-{% extends 'portfolio/base.html' %}
-
 {% load static %}
-
 {% block content %}
 
-<div class="container">
-  <br>
-  <h4>Hello! I'm Ed, thanks for visiting my blog!</h4>
-  <p>The COVID-19 pandemic has negatively impacted businesses and life.
-    In these times, I feel it's especially important to support Black and minority-owned businesses.
-    Some excellent resources are Do512's <a href="https://do512.com/p/black-owned-businesses-in-austin" target="_blank">Black-Owned Businesses</a>
-    and <a href="https://do512.com/p/resource-guide-to-creating-change-in-austin" target="_blank">Creating Change</a> in Austin.
-  </p>
-  <p>
-    In addition to random postings, I'll also be posting info about the locally-owned businesses
-    that I have visited and services that I have used. I, personally, have started using the list of businesses (mentioned above) provided by Do512. Enjoy!
-  </p>
-  <br>
-  <h5>Ed has written {{ blogs.count }} blog post{{ blogs.count |pluralize}}</h5>
-  <br>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="blog">
+    <title>EdnAustin - Blog</title>
 
-  <div class="row">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{% static "portfolio/blog.css" %}" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <a class="text-muted" href="{% url 'home' %}">Main</a>
+      </div>
+      <div class="col-4 text-center">
+        <h3 class="blog-header-logo text-dark" href="#">Blog</h3>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+
+      </div>
+    </div>
+  </header>
+
+  <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic">Summertime in the Music Capital of the World</h1>
+      <p class="lead my-3">Let's face it, 2020 (for the most part) has sucked. Let's make it not suck so much by supporting small businesses (especially those that are minority-owned), and, more importantly, supporting the civil rights movement here in Austin and across the US.</p>
+      <!-- <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p> -->
+    </div>
+  </div>
+
+
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        <div class="blog-post">
+          <h2 class="blog-post-title">Let's Start At Home</h2>
+          <p class="blog-post-meta">June 2020 <!-- by <a href="#">Mark</a> --> </p>
+
+          <p>In addition to random posts, I'll also be posting info about the locally-owned businesses or services that I have used. I, personally, have started using the list of businesses (link below) provided by Do512. I love food. I love coffee. I'll start with food.</p>
+          <hr>
+          <p>Below are some excellent resources from Do512:</p>
+            <ul>
+              <li><a href="https://do512.com/p/black-owned-businesses-in-austin" style="text-decoration: none" target="_blank">Black-Owned Businesses in Austin</a></li>
+              <li><a href="https://do512.com/p/resource-guide-to-creating-change-in-austin" style="text-decoration: none" target="_blank">Creating Change in Austin</a></li>
+            </ul>
+            <p>Have you <em>seen</em> the list? Ice cream, gourmet oatmeal, seafood... <strong>BBQ</strong>! Who said supporting local businesses had to be boring? Be safe and wear a mask to protect yourself and others!</p>
+        </div><!-- /.blog-post -->
+
+        <div class="blog-post">
+          <h2 class="blog-post-title">New Updates</h2>
+          <p class="blog-post-meta">July 2020 <!-- by <a href="#">Mark</a> --> </p>
+
+          <p>Updated the main blog page using a jumbotron-style template, similar to the homepage. Page updates include:</p>
+          <ul>
+            <li>An About and Interests sidebar.</li>
+            <li>This New Updates area.</li>
+            <li>An overall cleaner look.</li>
+          </ul>
+          <p>All updates to this blog will be posted here.</p>
+        </div><!-- /.blog-post -->
+
+      </div><!-- /.blog-main -->
+
+      <aside class="col-md-4 blog-sidebar">
+        <div class="p-4 mb-3 bg-light rounded">
+          <h4 class="font-italic">About</h4>
+          <p class="mb-0">Web Developer <i class="fas fa-code fa-sm"></i> Austin, Texas <i class="fas fa-map-marker-alt fa-sm"></i></p>
+          <br>
+          <h4 class="font-italic">Interests</h4>
+          <p class="mb-0">
+          <p>
+          Food <i class="fas fa-utensils fa-sm"></i>
+          Coffee <i class="fas fa-coffee fa-sm"></i>
+          Mountain Biking <i class="fas fa-bicycle fa-sm"></i>
+          Travel <i class="fas fa-plane fa-sm"></i>
+          Drinks <i class="fas fa-glass-whiskey fa-sm"></i>
+          Basketball <i class="fas fa-basketball-ball fa-sm"></i>
+          Live Music <i class="fas fa-guitar fa-sm"></i>
+          Football <i class="fas fa-football-ball fa-sm"></i>
+          Movies <i class="fas fa-ticket-alt fa-sm"></i>
+      	  Tech <i class="fas fa-mobile-alt fa-sm"></i>
+          </p>
+        </div>
+
+        <!--
+        <div class="p-4">
+          <h4 class="font-italic">Elsewhere</h4>
+          <ol class="list-unstyled">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ol>
+        </div>
+        -->
+      </aside><!-- /.blog-sidebar -->
+
+    </div><!-- /.row -->
+
+  </main><!-- /.container -->
+
+
+  <div class="row mb-2">
   {% for blog in blogs %}
-    <div class="col-lg-4 col-md-6">
-      <div class="card" style="width: 18rem;">
-        <img src="{{ blog.image.url }}" class="card-img-top" alt="blog image" width="200" height="200">
-        <div class="card-body">
 
-          <h4 class="card-title">{{ blog.title }}</h4>
-
-          {% comment %}
-          <a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
-
-          {% if blog.url %}
-          <br>
-          <br>
-          <a href="{{ blog.url }}" style="text-decoration: none" target="_blank"> Visit Page </a>
-          {% endif %}
-          {% endcomment %}
-
-          {% comment %}<h4>{{ blog.date |date:'M d Y' |upper }}</h4>{% endcomment %}
-          {% comment %}<p>{{ blog.description |striptags| truncatechars:120 }}</p>{% endcomment %}
-
-          <p class="card-text">{{ blog.description |striptags| truncatechars:120 }}</p>
-          <a href="{% url 'blog:detail' blog.id %}" class="btn btn-primary">{{ blog.title }}</a>
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <!-- <strong class="d-inline-block mb-2 text-primary">World</strong> -->
+          <h3 class="mb-0">{{ blog.title }}</h3>
+          <div class="mb-1 text-muted">{{ blog.date|date:'F jS Y'}}</div>
+          <p class="card-text mb-auto">{{ blog.description |striptags| truncatechars:120 }}</p>
+          <a href="{% url 'blog:detail' blog.id %}" style="text-decoration: none">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="{{ blog.image.url }}" class="img-responsive" width="200" height="250" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Image" <rect width="100%" height="100%" fill="#55595c"/>
         </div>
       </div>
     </div>
 {% endfor %}
+    <!--
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Design</strong>
+          <h3 class="mb-0">Post title</h3>
+          <div class="mb-1 text-muted">Nov 11</div>
+          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        </div>
+      </div>
+    </div>
+    -->
+
+  </div>
 </div>
 
+
+
+<footer class="blog-footer">
+  <p class="container text-center">© Ed Ramirez {% now "Y"%}</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+</footer>
+</body>
+</html>
 {% endblock %}
