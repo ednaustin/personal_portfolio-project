@@ -25,7 +25,7 @@ SECRET_KEY = 'bopillv$a2y3=pjx#57c=+qvt89_w56@^7r0)w-&!y7@u$@e^q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['edram23.pythonanywhere.com']
+ALLOWED_HOSTS = ['www.ednaustin.com']
 
 
 # Application definition
