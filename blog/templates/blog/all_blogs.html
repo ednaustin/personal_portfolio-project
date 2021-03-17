@@ -42,7 +42,7 @@
   <header class="blog-header py-3">
     <div class="row flex-nowrap justify-content-between align-items-center">
       <div class="col-4 pt-1">
-        <a class="text-muted" href="{% url 'home' %}">Main</a>
+        <a class="text-muted" href="{% url 'home' %}" style="text-decoration: none">Main</a>
       </div>
       <div class="col-4 text-center">
         <h3 class="blog-header-logo text-dark" href="#">Blog</h3>
@@ -56,7 +56,7 @@
   <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
     <div class="col-md-6 px-0">
       <h1 class="display-4 font-italic">The Live Music Capital of the World</h1>
-      <p class="lead my-3">Let's face it, 2020 (for the most part) has sucked. Let's make it not suck so much by supporting small businesses (especially those that are minority-owned), and, more importantly, supporting the civil rights movement here in Austin and across the US.</p>
+      <p class="lead my-3">I am probably not alone when I say that I am looking forward to the day that we can all safely visit our local Austin music venues, restaurants, and bars. Looking forward to a great 2021.</p>
       <!-- <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p> -->
     </div>
   </div>
@@ -66,24 +66,25 @@
     <div class="row">
       <div class="col-md-8 blog-main">
         <div class="blog-post">
-          <h2 class="blog-post-title">It's The End of The Year</h2>
-          <p class="blog-post-meta">December 2020 <!-- by <a href="#">Mark</a> --> </p>
+          <h2 class="blog-post-title">Austin, Texas</h2>
+          <p class="blog-post-meta">January 2021 <!-- by <a href="#">Mark</a> --> </p>
 
-          <p>We did it. We <em>survived</em> 2020. We're still social distancing and wearing masks, but we have a vaccine coming. That's the light at the end of the tunnel. I, personally, am thankful for my family, my friends, and our health. Stay safe.</p>
+          <p>We did it. We survived 2020 <em>and</em> Snovid. We're still social distancing and wearing masks, but more and more people are getting vaccinated. Let's continue to support our local businesses. Stay safe.</p>
           <hr>
           <p>Some excellent resources from Do512:</p>
             <ul>
-              <li><a href="https://do512.com/p/black-owned-businesses-in-austin" style="text-decoration: none" target="_blank">Black-Owned Businesses in Austin</a></li>
-              <li><a href="https://do512.com/p/resource-guide-to-creating-change-in-austin" style="text-decoration: none" target="_blank">Creating Change in Austin</a></li>
+              <li><a class="text-muted" href="https://do512.com/p/black-owned-businesses-in-austin" style="text-decoration: none" target="_blank">Black-Owned Businesses in Austin</a></li>
+              <li><a class="text-muted" href="https://do512.com/p/resource-guide-to-creating-change-in-austin" style="text-decoration: none" target="_blank">Creating Change in Austin</a></li>
+              <li><a class="text-muted" href="https://do512.com/p/latinx-owned-restaurants" style="text-decoration: none" target="_blank">Latinx-Owned Restaurants in Austin</a></li>
             </ul>
-            <p>Have you <em>seen</em> the list? Ice cream, gourmet oatmeal, seafood... <strong>BBQ</strong>! Who said supporting local businesses had to be boring? Be safe and wear a mask to protect yourself and others!</p>
+            <p>Please check out the business lists above. There's ice cream, gourmet oatmeal, seafood, BBQ, and recently <em><strong>coffee</strong></em>! Be safe and wear a mask to protect yourself and others!</p>
         </div><!-- /.blog-post -->
 
         <div class="blog-post">
           <h2 class="blog-post-title">Site Updates</h2>
-          <p class="blog-post-meta">Dec 2020 <!-- by <a href="#">Mark</a> --> </p>
+          <p class="blog-post-meta">Dec 2021 <!-- by <a href="#">Mark</a> --> </p>
 
-          <p>I've made some accessibility updates to the site. More to come!</p> 
+          <p>I've only scratched the surface on accessibility updates to the site. More to come!</p>
           <p>June: Updated the main blog page using a jumbotron-style template, similar to the homepage. Page updates include:</p>
           <ul>
             <li>An About and Interests sidebar.</li>
@@ -144,7 +145,7 @@
           <h3 class="mb-0">{{ blog.title }}</h3>
           <div class="mb-1 text-muted">{{ blog.date|date:'F jS Y'}}</div>
           <p class="card-text mb-auto">{{ blog.description |striptags| truncatechars:120 }}</p>
-          <a href="{% url 'blog:detail' blog.id %}" style="text-decoration: none">Continue reading</a>
+          <a class="text-muted" href="{% url 'blog:detail' blog.id %}" style="text-decoration: none">Continue reading</a>
         </div>
         <div class="col-auto d-none d-lg-block">
           <img src="{{ blog.image.url }}" class="img-responsive" width="200" height="250" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Image" <rect width="100%" height="100%" fill="#55595c"/>
